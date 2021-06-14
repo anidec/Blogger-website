@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+    <h1 style="margin-bottom: 50px; font-family: 'Dancing Script', cursive;">
+        Sign Up/Login to Write your
+        Posts.<br><a class="btn btn-primary" href="/register">Sign Up</a>
+        <a class="btn btn-primary" href="/login">Login</a>
+    </h1>
+
+    <% posts.forEach(function(post){ %>
+        <div>
+            <h1>
+                <%= post.title %>
+            </h1>
+            <b>by</b>
+            <i>
+                <%= post.username %>
+            </i>
+        </div>
+        </p>
+        <p>
+            <%= post.content.substring(0,100) + " ..." %>
+                <a href="/posts/<%= post._id %>">Read More</a>
+        </p>
+        <% }) %>
+            <!-- <%- include('partials/footer') -%> -->
